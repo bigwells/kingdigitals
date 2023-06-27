@@ -473,78 +473,101 @@ body {
   #HIW
 \*-----------------------------------*/
 
-#hiw .container {
-  min-width: 100%;
-}
-#hiw .sub-container {
+.hiw-container {
   display: flex;
-  align-items: center;
   justify-content: center;
+  overflow: none;
+  gap: 50px;
+  margin-top: 30px;
+}
+
+.hiw-card {
   text-align: center;
-  gap: 20px;
-  overflow: hidden;
-  max-width: 100%;
-  padding-top: 30px;
-  
-  flex-shrink: 3;
+  width: 280px;
 }
 
-.how-card {
-  width: 320px;
-  height: 400px;
+.hiw-image img {
+  margin: 20px auto;
+  width: 280px;
+  height: 180px;
+  border-radius: var(--radius-5);
+  object-fit: cover;
 }
 
-.how-card h3 {
-  margin: 25px 0;
-}
-
-.hiw-img {
+.hiw-image {
   position: relative;
-  min-width: 300px;
 }
 
-.hiw-img::after {
+.hiw-image::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  border-radius: var(--radius-5);
   background-color: var(--black);
-  opacity: 0.5;
+  opacity: 0.4;
   transition: var(--transition-2);
 }
 
-.btn-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.hiw-play {
+  background-color: var(--red-crayola);
+  color: var(--white-2);
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   font-size: 18px;
   font-weight: 800;
-}
+  cursor: pointer;
 
-
-
-.how-card .play-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+
   position: absolute;
-  top: 18%;
-  left: 15%;
-  background-color: var(--white-1);
-  color: var(--red-crayola);
+  top: 20px;
+  left: 25px;
   z-index: 1;
-  border-radius: 50%;
-  animation: puls 1.5s ease-out infinite;
+  
+  animation: pulses 1.5s ease-out infinite;
 }
 
-@keyframes puls {
-  0% { box-shadow: 0 0 0 1px var(--white-1); }
-  100% { box-shadow: 0 0 0 15px transparent; }
+@keyframes pulses {
+  0% { box-shadow: 0 0 0 1px var(--red-crayola); }
+  100% { box-shadow: 0 0 0 25px transparent; }
+}
+
+
+
+@media (max-width: 935px) {
+  .hiw-container {
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    text-align: center;
+    position: relative;
+  }
+
+  .hiw-card {
+    display: inline-block;
+    margin: 0 10px;
+  }
+
+  .card-3 {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 655px) {
+  .hiw-card {
+    width: 90%;
+  }
+
+  .hiw-image img {
+    width: 100%;
+    height: 250px;
+  }
 }
 
 
@@ -1273,153 +1296,3 @@ textarea {
 
 
 /*00000000000000000000000*/
-
-
-
-
-
-#featured .container{
-  gap: 180px;
-  width: 85%;
-  margin: 0 auto;
-  padding: 20px 0;
-}
-
-
-@keyframes slide {
-  from {
-      transform: translateX(0);
-  }
-  to {
-      transform: translateX(-100%);
-  }
-}
-
-.logos {
-  overflow: hidden;
-  white-space: nowrap;
-  position: relative;
-}
-
-.logos::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100px;
-  height: 100%;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0), #fff);
-  content: "";
-  z-index: 2;
-}
-
-.logos::after {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100px;
-  height: 100%;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), #fff);
-  content: "";
-  z-index: 2;
-}
-
-.logos:hover .logos-slide{
-  animation-play-state: paused;
-}
-
-.test .sub-container {
-  display: inline-block;
-  animation: 30s slide infinite linear;
-}
-
-.logos-slide img {
-  height: 30px;
-  margin: 0 40px;
-  opacity: 0.9;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#hiw .container {
-  min-width: 100%;
-}
-#hiw .sub-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 20px;
-  overflow: hidden;
-  max-width: 100%;
-  padding-top: 30px;
-}
-
-.how-card {
-  width: 320px;
-  height: 400px;
-}
-
-.how-card h3 {
-  margin: 25px 0;
-}
-
-.hiw-img {
-  position: relative;
-  min-width: 300px;
-}
-
-.hiw-img::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--black);
-  opacity: 0.5;
-  transition: var(--transition-2);
-}
-
-.btn-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  font-size: 18px;
-  font-weight: 800;
-}
-
-
-
-.how-card .play-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  top: 18%;
-  left: 15%;
-  background-color: var(--white-1);
-  color: var(--red-crayola);
-  z-index: 1;
-  border-radius: 50%;
-  animation: puls 1.5s ease-out infinite;
-}
-
-@keyframes puls {
-  0% { box-shadow: 0 0 0 1px var(--white-1); }
-  100% { box-shadow: 0 0 0 15px transparent; }
-}
-
